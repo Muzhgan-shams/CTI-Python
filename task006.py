@@ -43,10 +43,10 @@ if crossroad == 'left':
             if chests == 'a':
                 print("Chest A is full of gold! You won 🎉🥳")
             else:
-                print("Game over 🥲")
+                print(f"Chest {chests.upper()} is empty.\nGame over🥲  ")
         else:
-            print("Game over 🥲")
+            print("You entered a room full of fire🔥\nGame over🥲 ")
     else:
-        print("Game over 🥲")
+        print("You were attacked🧌\nGame over🥲 ")
 else:
-    print("Game over 🥲")
+    print("You fell into a hole🕳️\nGame over🥲")
