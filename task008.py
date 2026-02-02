@@ -1,4 +1,4 @@
-# Rock Paper Scissors ASCII Art
+# Rock Paper Scissors
 import random
 arts = ["""
     _______
