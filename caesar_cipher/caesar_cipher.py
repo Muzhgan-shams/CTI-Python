@@ -1,42 +1,41 @@
 # Ceasar Cipher
+import string
+import art
+# from art import logo
 
-alphabet = [
-    'a', 'b', 'c', 'd', 'e', 'f', 'g',
-    'h', 'i', 'j', 'k', 'l', 'm', 'n',
-    'o', 'p', 'q', 'r', 's', 't', 'u',
-    'v', 'w', 'x', 'y', 'z'
-]
-direction = input(
-    "Type 'encode' to encrypt, type 'decode' to decrypt: \n").lower().strip()
-text = input("Type your message: \n").lower().strip()
-shift = int(input("Type the shift number: \n"))
+alphabet = list(string.ascii_lowercase)
 
-# Encryption function
+print(art.logo)
 
 
-def encrypt(original_text, shift_number):
+def caesar(decode_or_encode, original_text, shift_number):
+    if decode_or_encode not in ["encode", "decode"]:
+        return "Please use 'encode' or 'decode'."
+
+    if decode_or_encode == "decode":
+        shift_number *= -1
+
     cipher_message = ""
-    for letter in original_text:
-        shifted_postition = alphabet.index(letter) + shift_number
-        shifted_postition %= len(alphabet)  # z -> (26 + 9) % 26 = 9
-        cipher_message += alphabet[shifted_postition]
-    print(f"Here is the encoded message: {cipher_message}")
+    for char in original_text:
+        if char not in alphabet:
+            cipher_message += char
+        else:
+            shifted_position = alphabet.index(char) + shift_number
+            shifted_position %= len(alphabet)  # z -> (26 + 9) % 26 = 9
+            cipher_message += alphabet[shifted_position]
+
+    return (f"Here is the {decode_or_encode}d message: {cipher_message}")
 
 
-def decrypt(original_text, shift_number):
-    decoded_message = ""
-    for letter in original_text:
-        shifted_postition = alphabet.index(letter) - shift_number
-        shifted_postition %= len(alphabet)
-        decoded_message += alphabet[shifted_postition]
-    print(f"Here is the decoded message: {decoded_message}")
+should_continue = True
+while should_continue:
+    direction = input(
+        "Type 'encode' to encrypt, type 'decode' to decrypt: \n").lower().strip()
+    text = input("Type your message: \n").lower()
+    shift = int(input("Type the shift number: \n"))
 
-
-def caesar(decode_or_encode):
-    if (decode_or_encode == "encode"):
-        encrypt(original_text=text, shift_number=shift)
-    elif (decode_or_encode == "decode"):
-        decrypt(original_text=text, shift_number=shift)
-
-
-caesar(direction)
+    print(caesar(direction, original_text=text, shift_number=shift))
+    restart = input(
+        "Type 'yes' if you want to go again,'no' to quit: \n").lower().strip()
+    if restart == 'no':
+        should_continue = False
