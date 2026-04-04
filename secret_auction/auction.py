@@ -1,4 +1,20 @@
-# Secret Auction
+# Secret Auction Game
+
+print(r"""
+   ==========================================
+        ____   _     _     _       
+       | __ ) (_) __| | __| | ___  
+       |  _ \ | |/ _` |/ _` |/ _ \ 
+       | |_) || | (_| | (_| |  __/ 
+       |____/ |_|__,_|\__,_|\___|  
+                                   
+        $$$   SECRET BIDS   $$$
+        Place your hidden offers...
+        Who will win the prize?
+   ==========================================
+""")
+
+
 continue_bidding = True
 bids_db = {}
 
@@ -25,4 +41,4 @@ while continue_bidding:
         continue_bidding = False
         get_highest_bid(bids_db)
     elif should_continue == "yes":
-        print("\n"*30)
+        print("\n" * 30)
