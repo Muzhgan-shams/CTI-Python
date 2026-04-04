@@ -1,19 +1,6 @@
 # Secret Auction Game
-
-print(r"""
-   ==========================================
-        ____   _     _     _       
-       | __ ) (_) __| | __| | ___  
-       |  _ \ | |/ _` |/ _` |/ _ \ 
-       | |_) || | (_| | (_| |  __/ 
-       |____/ |_|__,_|\__,_|\___|  
-                                   
-        $$$   SECRET BIDS   $$$
-        Place your hidden offers...
-        Who will win the prize?
-   ==========================================
-""")
-
+import art
+print(art.logo)
 
 continue_bidding = True
 bids_db = {}
