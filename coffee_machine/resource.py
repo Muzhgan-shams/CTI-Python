@@ -1,32 +1,40 @@
-MENU = {
-    "Espresso": {
-        "Ingredients": {
-            "Water": 50,
-            "Coffee": 18
-        },
-        "Cost": 1.50
-    },
-    "Latte": {
-        "Ingredients": {
-            "Water": 200,
-            "Coffee": 24,
-            "Milk": 150
-        },
-        "Cost": 2.50
-    },
-    "Cappuccino": {
-        "Ingredients": {
-            "Water": 250,
-            "Coffee": 24,
-            "Milk": 100
-        },
-        "Cost": 3.00
-    },
+coffee_logo = """
+      ( (
+       ) )
+    ........
+    |      |]
+    \      /
+     `----'
+"""
 
+MENU = {
+    "espresso": {
+        "ingredients": {
+            "water": 50,
+            "coffee": 18
+        },
+        "cost": 1.50
+    },
+    "latte": {
+        "ingredients": {
+            "water": 200,
+            "coffee": 24,
+            "milk": 150
+        },
+        "cost": 2.50
+    },
+    "cappuccino": {
+        "ingredients": {
+            "water": 250,
+            "coffee": 24,
+            "milk": 100
+        },
+        "cost": 3.00
+    },
 }
 
 resources = {
-    "Water": 300,
-    "Coffee": 100,
-    "Milk": 200
+    "water": 300,
+    "coffee": 100,
+    "milk": 200
 }
