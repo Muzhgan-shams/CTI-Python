@@ -1,0 +1,4 @@
+Object: Drone
+
+Attributes: weight, range, cameraQuality, batteryLife, maxAltitude
+Methods: takeOff(), captureVideo(), land()
